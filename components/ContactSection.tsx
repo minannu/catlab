@@ -8,14 +8,14 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'info@catlab.edu',
-      description: 'Send us an email anytime'
+      details: 'mohammad.rashid@catlab.edu',
+      description: 'Contact our lab head directly'
     },
     {
       icon: MapPin,
       title: 'Location',
-      details: 'Research Building, Room 301',
-      description: 'University Campus, City, State'
+      details: 'Computer Science Department',
+      description: 'University Campus, Research Lab'
     },
     {
       icon: Phone,

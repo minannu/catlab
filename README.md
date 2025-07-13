@@ -1,6 +1,6 @@
-# Cat Lab - Literature & Social Media Analysis Research Website
+# Cat Lab - Computer Science & Data Mining Research Website
 
-A modern, responsive website for Cat Lab, a research laboratory focused on computational analysis of literature and social media. Built with Next.js, TypeScript, and Tailwind CSS.
+A modern, responsive website for Cat Lab, a research laboratory focused on computer science, machine learning, and data mining. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
@@ -15,7 +15,7 @@ A modern, responsive website for Cat Lab, a research laboratory focused on compu
 
 1. **Hero Section**: Eye-catching introduction with animated elements
 2. **About Section**: Lab mission, values, and approach
-3. **Research Areas**: Six main research focus areas with detailed descriptions
+3. **Research Areas**: Six main research focus areas including Machine Learning, Data Mining, and Algorithm Design
 4. **Team Section**: Lab members with profiles and contact information
 5. **Publications**: Recent research papers and publications
 6. **News & Events**: Latest updates and upcoming events

@@ -31,7 +31,7 @@ const Hero = () => {
               <span className="gradient-text">Cat Lab</span>
             </h1>
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-700 mb-8 font-light">
-              Advancing Literature & Social Media Analysis
+              Advancing Computer Science & Data Mining Research
             </p>
           </motion.div>
 
@@ -77,7 +77,7 @@ const Hero = () => {
                 <h3 className="text-xl font-semibold text-gray-800">Literature Analysis</h3>
               </div>
               <p className="text-gray-600">
-                Advanced text mining and computational analysis of literary works across genres and time periods.
+                Advanced sentiment analysis and social media research for user engagement and audience behavior.
               </p>
             </div>
 
@@ -89,7 +89,7 @@ const Hero = () => {
                 <h3 className="text-xl font-semibold text-gray-800">Social Media Research</h3>
               </div>
               <p className="text-gray-600">
-                Real-time analysis of digital discourse, sentiment analysis, and trend prediction in social networks.
+                Natural language processing and contextual embedding analysis for Bangla and literary texts.
               </p>
             </div>
           </motion.div>

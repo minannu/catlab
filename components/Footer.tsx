@@ -7,10 +7,10 @@ const Footer = () => {
 
   const footerLinks = {
     research: [
-      { name: 'Literature Analysis', href: '#research' },
       { name: 'Social Media Analysis', href: '#research' },
-      { name: 'Digital Humanities', href: '#research' },
-      { name: 'NLP & Machine Learning', href: '#research' }
+      { name: 'Sentiment Analysis', href: '#research' },
+      { name: 'NLP & Bangla Processing', href: '#research' },
+      { name: 'User Engagement Research', href: '#research' }
     ],
     team: [
       { name: 'Our Team', href: '#team' },
@@ -36,7 +36,7 @@ const Footer = () => {
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Globe, href: '#', label: 'Website' },
-    { icon: Mail, href: 'mailto:info@catlab.edu', label: 'Email' }
+    { icon: Mail, href: 'mailto:mohammad.rashid@catlab.edu', label: 'Email' }
   ]
 
   return (

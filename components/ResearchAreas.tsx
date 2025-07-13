@@ -6,46 +6,46 @@ import { BookOpen, TrendingUp, Brain, Globe, Database, BarChart3 } from 'lucide-
 const ResearchAreas = () => {
   const researchAreas = [
     {
-      title: 'Literature Text Analysis',
-      description: 'Computational analysis of literary works, including sentiment analysis, theme extraction, and stylistic pattern recognition across different genres and time periods.',
-      icon: BookOpen,
+      title: 'Machine Learning & AI',
+      description: 'Advanced machine learning algorithms and artificial intelligence techniques for pattern recognition, classification, and predictive modeling in text and data analysis.',
+      icon: Brain,
       color: 'primary',
-      features: ['Sentiment Analysis', 'Theme Extraction', 'Stylistic Analysis', 'Genre Classification']
+      features: ['Pattern Recognition', 'Predictive Modeling', 'Deep Learning', 'Neural Networks']
     },
     {
-      title: 'Social Media Analysis',
-      description: 'Real-time analysis of digital discourse, including trend prediction, influence mapping, and community detection in social networks.',
-      icon: TrendingUp,
+      title: 'Data Mining & Analytics',
+      description: 'Comprehensive data mining techniques for extracting meaningful patterns and insights from large-scale datasets including literature and social media.',
+      icon: Database,
       color: 'secondary',
-      features: ['Trend Prediction', 'Influence Mapping', 'Community Detection', 'Viral Content Analysis']
+      features: ['Pattern Extraction', 'Clustering Analysis', 'Association Rules', 'Anomaly Detection']
     },
     {
       title: 'Natural Language Processing',
-      description: 'Advanced NLP techniques for understanding human language patterns, including machine learning models for text classification and generation.',
-      icon: Brain,
+      description: 'Advanced NLP techniques for understanding human language patterns, including sentiment analysis, emotion detection, and contextual embedding analysis for Bangla and literary texts.',
+      icon: BookOpen,
       color: 'accent',
-      features: ['Text Classification', 'Language Generation', 'Named Entity Recognition', 'Semantic Analysis']
+      features: ['Sentiment Analysis', 'Emotion Detection', 'Contextual Embeddings', 'Bangla NLP']
     },
     {
-      title: 'Digital Humanities',
-      description: 'Bridging traditional humanities research with computational methods to explore cultural artifacts and historical texts.',
-      icon: Globe,
+      title: 'Social Media Analysis',
+      description: 'Real-time analysis of digital discourse, including user engagement analysis, live chat sentiment analysis, and audience behavior in platforms like YouTube and gaming communities.',
+      icon: TrendingUp,
       color: 'primary',
-      features: ['Cultural Analytics', 'Historical Text Mining', 'Digital Archives', 'Cultural Pattern Recognition']
+      features: ['User Engagement Analysis', 'Live Chat Sentiment', 'Audience Behavior', 'Platform Analytics']
     },
     {
-      title: 'Big Data Analytics',
-      description: 'Processing and analyzing large-scale textual datasets to uncover patterns and insights in human communication.',
-      icon: Database,
-      color: 'secondary',
-      features: ['Large-scale Processing', 'Pattern Recognition', 'Data Visualization', 'Predictive Modeling']
-    },
-    {
-      title: 'Computational Linguistics',
-      description: 'Developing algorithms and models to understand linguistic structures and language evolution across different contexts.',
+      title: 'Algorithm Design & Optimization',
+      description: 'Development of efficient algorithms and optimization techniques for complex computational problems in data analysis and processing.',
       icon: BarChart3,
+      color: 'secondary',
+      features: ['Algorithm Design', 'Performance Optimization', 'Complexity Analysis', 'Scalable Solutions']
+    },
+    {
+      title: 'Computational Intelligence',
+      description: 'Exploring computational intelligence methods including fuzzy logic, genetic algorithms, and swarm intelligence for solving complex problems.',
+      icon: Globe,
       color: 'accent',
-      features: ['Linguistic Modeling', 'Language Evolution', 'Syntax Analysis', 'Morphological Analysis']
+      features: ['Fuzzy Logic', 'Genetic Algorithms', 'Swarm Intelligence', 'Evolutionary Computing']
     }
   ]
 
@@ -63,8 +63,8 @@ const ResearchAreas = () => {
             Research <span className="gradient-text">Areas</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our research spans multiple domains at the intersection of computational linguistics, 
-            digital humanities, and social media analysis.
+            Our research spans multiple domains at the intersection of computer science, 
+            machine learning, and data mining for literature and social media analysis.
           </p>
         </motion.div>
 
@@ -123,21 +123,21 @@ const ResearchAreas = () => {
           
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h4 className="font-semibold mb-2">Digital Literary Mapping</h4>
+              <h4 className="font-semibold mb-2">YouTube Engagement Analysis</h4>
               <p className="text-sm opacity-80">
-                Creating interactive maps of literary themes and motifs across time and geography.
+                Analyzing user engagement patterns in Bengali audio-story based YouTube channels.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h4 className="font-semibold mb-2">Social Media Sentiment Evolution</h4>
+              <h4 className="font-semibold mb-2">Esports Sentiment Analysis</h4>
               <p className="text-sm opacity-80">
-                Tracking how public sentiment changes in response to major events and news cycles.
+                LLM-based topic insights from live chats in South Asian gaming communities.
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <h4 className="font-semibold mb-2">AI-Powered Text Analysis</h4>
+              <h4 className="font-semibold mb-2">Bangla E-Commerce Analysis</h4>
               <p className="text-sm opacity-80">
-                Developing next-generation AI models for understanding context and nuance in text.
+                Enhancing sentiment and emotion analysis accuracy for Bangla datasets.
               </p>
             </div>
           </div>

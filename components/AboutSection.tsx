@@ -5,16 +5,16 @@ import { Target, Users, Award, Globe } from 'lucide-react'
 
 const AboutSection = () => {
   const stats = [
-    { number: '50+', label: 'Research Papers', icon: Award },
-    { number: '15+', label: 'Team Members', icon: Users },
-    { number: '10+', label: 'Years Experience', icon: Target },
-    { number: '25+', label: 'Countries Reached', icon: Globe },
+    { number: '10+', label: 'Research Papers', icon: Award },
+    { number: '3', label: 'Team Members', icon: Users },
+    { number: '5+', label: 'Years Experience', icon: Target },
+    { number: '3+', label: 'Countries Reached', icon: Globe },
   ]
 
   const values = [
     {
       title: 'Innovation',
-      description: 'Pushing the boundaries of computational analysis in humanities research',
+      description: 'Pushing the boundaries of computational analysis and machine learning in research',
       color: 'primary'
     },
     {
@@ -24,7 +24,7 @@ const AboutSection = () => {
     },
     {
       title: 'Impact',
-      description: 'Creating meaningful insights that advance our understanding of human communication',
+      description: 'Creating meaningful insights that advance our understanding of data and algorithms',
       color: 'accent'
     }
   ]
@@ -43,8 +43,8 @@ const AboutSection = () => {
             About <span className="gradient-text">Cat Lab</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We are a multidisciplinary research laboratory dedicated to advancing the understanding 
-            of human communication through computational analysis of literature and social media.
+            We are a multidisciplinary research laboratory dedicated to advancing sentiment analysis, 
+            social media research, and natural language processing for analyzing user engagement and audience behavior.
           </p>
         </motion.div>
 
@@ -59,16 +59,15 @@ const AboutSection = () => {
               Our Mission
             </h3>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              At Cat Lab, we believe that the intersection of computational linguistics and digital 
-              humanities holds the key to understanding how human communication evolves across time 
-              and platforms. Our research spans from classical literature analysis to real-time 
-              social media discourse, providing insights into the patterns and structures that 
-              shape human expression.
+              At Cat Lab, we believe that the intersection of sentiment analysis and social media research 
+              holds the key to understanding user engagement patterns and audience behavior. 
+              Our research spans from YouTube engagement analysis to esports sentiment analysis, 
+              providing insights into the patterns and structures that shape digital communication.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              We develop cutting-edge tools and methodologies that enable researchers, educators, 
-              and policymakers to better understand the complex dynamics of human communication 
-              in both traditional and digital contexts.
+              We develop cutting-edge sentiment analysis and NLP tools that enable researchers, 
+              educators, and policymakers to better understand user engagement and audience behavior 
+              in social media platforms and digital communities.
             </p>
           </motion.div>
 
@@ -83,11 +82,11 @@ const AboutSection = () => {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-primary-500 rounded-full flex-shrink-0 mt-1"></div>
-                <p className="text-gray-700">Combining traditional humanities research with computational methods</p>
+                <p className="text-gray-700">Combining computer science research with computational methods</p>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-secondary-500 rounded-full flex-shrink-0 mt-1"></div>
-                <p className="text-gray-700">Developing open-source tools for the research community</p>
+                <p className="text-gray-700">Developing machine learning algorithms for data analysis</p>
               </div>
               <div className="flex items-start space-x-3">
                 <div className="w-6 h-6 bg-accent-500 rounded-full flex-shrink-0 mt-1"></div>

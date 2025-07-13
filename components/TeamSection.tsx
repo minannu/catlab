@@ -2,85 +2,53 @@
 
 import { motion } from 'framer-motion'
 import { Linkedin, Twitter, Globe, Mail } from 'lucide-react'
+import Image from 'next/image'
 
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: 'Dr. Sarah Chen',
-      role: 'Principal Investigator',
-      expertise: 'Computational Linguistics, Digital Humanities',
-      bio: 'Leading research in computational analysis of literary texts and digital humanities methodologies.',
-      image: '/api/placeholder/300/300',
+      name: ' Mohammad Harun Or Rashid',
+      role: 'Lab Head & Principal Investigator',
+      expertise: 'Computer Science, Machine Learning, Data Mining',
+      bio: 'Leading research in computer science with focus on machine learning, data mining, and computational intelligence. Extensive experience in developing algorithms for pattern recognition and predictive modeling.',
+      image: '/images/team/harun.jpg', // Placeholder for testing
+      // image: '/images/team/mohammad-rashid.jpg', // Uncomment when you have the actual image
+      fallbackInitials: 'MR',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.researchgate.net/profile/Mohammad-Rashid-30',
         twitter: '#',
-        website: '#',
-        email: 'sarah.chen@catlab.edu'
+        website: 'https://www.researchgate.net/profile/Mohammad-Rashid-30',
+        email: 'mohammad.rashid@catlab.edu'
       }
     },
     {
-      name: 'Dr. Marcus Rodriguez',
-      role: 'Senior Research Scientist',
-      expertise: 'Social Media Analysis, Network Science',
-      bio: 'Specializing in real-time social media analysis and network dynamics in digital communities.',
-      image: '/api/placeholder/300/300',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        website: '#',
-        email: 'marcus.rodriguez@catlab.edu'
-      }
-    },
-    {
-      name: 'Dr. Emily Watson',
+      name: 'Md. Minhazul Islam',
       role: 'Research Scientist',
-      expertise: 'Natural Language Processing, Machine Learning',
-      bio: 'Developing advanced NLP models for text analysis and language understanding.',
-      image: '/api/placeholder/300/300',
+      expertise: 'Computer Science, Software Engineering, Algorithm Design',
+      bio: 'Specializing in software engineering and algorithm design with expertise in developing efficient computational solutions for complex problems.',
+      image: '/images/team/minhazul.jpg', // Placeholder for testing
+      // image: '/images/team/minhazul-islam.jpg', // Uncomment when you have the actual image
+      fallbackInitials: 'MI',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.researchgate.net/profile/Md-Minhazul-Islam-5',
         twitter: '#',
-        website: '#',
-        email: 'emily.watson@catlab.edu'
+        website: 'https://www.researchgate.net/profile/Md-Minhazul-Islam-5',
+        email: 'minhazul.islam@catlab.edu'
       }
     },
     {
-      name: 'Dr. James Kim',
-      role: 'Postdoctoral Researcher',
-      expertise: 'Big Data Analytics, Cultural Analytics',
-      bio: 'Working on large-scale cultural data analysis and pattern recognition in digital archives.',
-      image: '/api/placeholder/300/300',
+      name: 'Tanbeer Jubaer',
+      role: 'Research Associate',
+      expertise: 'Computer Science, Data Analysis, Research Methodology',
+      bio: 'Focused on data analysis and research methodology, contributing to the development of computational tools for literature and social media analysis.',
+      image: '/images/team/oitik.jpg', // Placeholder for testing
+      // image: '/images/team/tanbeer-jubaer.jpg', // Uncomment when you have the actual image
+      fallbackInitials: 'TJ',
       social: {
-        linkedin: '#',
+        linkedin: 'https://www.researchgate.net/profile/Tanbeer-Jubaer',
         twitter: '#',
-        website: '#',
-        email: 'james.kim@catlab.edu'
-      }
-    },
-    {
-      name: 'Alex Thompson',
-      role: 'PhD Student',
-      expertise: 'Literature Analysis, Sentiment Analysis',
-      bio: 'Researching computational methods for analyzing emotional patterns in literary works.',
-      image: '/api/placeholder/300/300',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        website: '#',
-        email: 'alex.thompson@catlab.edu'
-      }
-    },
-    {
-      name: 'Priya Patel',
-      role: 'PhD Student',
-      expertise: 'Social Network Analysis, Digital Discourse',
-      bio: 'Investigating the evolution of online communities and digital communication patterns.',
-      image: '/api/placeholder/300/300',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        website: '#',
-        email: 'priya.patel@catlab.edu'
+        website: 'https://www.researchgate.net/profile/Tanbeer-Jubaer',
+        email: 'tanbeer.jubaer@catlab.edu'
       }
     }
   ]
@@ -114,8 +82,24 @@ const TeamSection = () => {
               viewport={{ once: true }}
               className="bg-gray-50 rounded-xl p-6 text-center card-hover"
             >
-              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center text-white text-3xl font-bold">
-                {member.name.split(' ').map(n => n[0]).join('')}
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center text-white text-3xl font-bold relative">
+                {/* Option 1: Local image */}
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={128}
+                  height={128}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Fallback to initials if image fails to load
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `<span class="text-white text-3xl font-bold">${member.fallbackInitials}</span>`;
+                    }
+                  }}
+                />
               </div>
               
               <h3 className="text-xl font-bold mb-2 text-gray-800">
