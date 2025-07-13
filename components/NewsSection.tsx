@@ -79,7 +79,7 @@ const NewsSection = () => {
   return (
     <section id="news" className="section-padding bg-white">
       <div className="container-custom">
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -99,12 +99,12 @@ const NewsSection = () => {
           <div className="lg:col-span-2">
             <div className="grid md:grid-cols-2 gap-6">
               {newsItems.slice(0, 4).map((item, index) => (
-                <motion.div
+              <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
+                viewport={{ once: true }}
                   className={`bg-gray-50 rounded-xl overflow-hidden card-hover ${
                     item.featured ? 'md:col-span-2' : ''
                   }`}
@@ -120,13 +120,13 @@ const NewsSection = () => {
                         {item.category}
                       </span>
                       <span className="text-sm text-gray-500">{item.date}</span>
-                    </div>
+                </div>
                     <h3 className="text-lg font-bold mb-3 text-gray-800">
-                      {item.title}
-                    </h3>
+                    {item.title}
+                  </h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                      {item.excerpt}
-                    </p>
+                    {item.excerpt}
+                  </p>
                     <button className="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center space-x-1">
                       <span>Read More</span>
                       <ExternalLink size={14} />
@@ -135,7 +135,7 @@ const NewsSection = () => {
                 </motion.div>
               ))}
             </div>
-          </div>
+                    </div>
 
           {/* Sidebar */}
           <div className="space-y-8">
@@ -203,13 +203,13 @@ const NewsSection = () => {
                     <div className="text-sm text-gray-600">TextMiner Pro Tool</div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
           </div>
         </div>
 
         {/* View All News CTA */}
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -218,7 +218,7 @@ const NewsSection = () => {
         >
           <button className="btn-secondary">
             View All News & Events
-          </button>
+              </button>
         </motion.div>
       </div>
     </section>
