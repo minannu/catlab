@@ -1,7 +1,7 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
-import ResearchAreas from '@/components/ResearchAreas'
 import AboutSection from '@/components/AboutSection'
+import ResearchAreas from '@/components/ResearchAreas'
 import TeamSection from '@/components/TeamSection'
 import PublicationsSection from '@/components/PublicationsSection'
 import NewsSection from '@/components/NewsSection'
@@ -13,8 +13,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <ResearchAreas />
       <AboutSection />
+      <ResearchAreas />
       <TeamSection />
       <PublicationsSection />
       <NewsSection />

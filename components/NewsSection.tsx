@@ -1,222 +1,224 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Users, ArrowRight, Award, Presentation, Globe } from 'lucide-react'
+import { Calendar, MapPin, Award, Users, ExternalLink } from 'lucide-react'
 
 const NewsSection = () => {
   const newsItems = [
     {
-      type: 'conference',
-      title: 'CatLab Presents at ACL 2024',
-      excerpt: 'Our team presented three papers at the Association for Computational Linguistics conference, showcasing our latest work in computational literature analysis.',
-      date: 'July 15, 2024',
-      location: 'Toronto, Canada',
-      attendees: ['Sarah Chen', 'Marcus Rodriguez', 'Alex Kim'],
-      image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=600&h=400&fit=crop',
-      link: '#'
+      title: 'Cat Lab Receives $2M Grant for Digital Humanities Research',
+      date: 'March 15, 2024',
+      category: 'Funding',
+      excerpt: 'The National Science Foundation has awarded our lab a major grant to advance computational methods in digital humanities research.',
+      image: '/api/placeholder/400/250',
+      featured: true
     },
     {
-      type: 'award',
-      title: 'Best Paper Award at Digital Humanities Conference',
-      excerpt: 'Our research on "Computational Analysis of Literary Style Evolution" received the Best Paper Award at the annual Digital Humanities conference.',
-      date: 'June 28, 2024',
-      location: 'Virtual Conference',
-      attendees: ['Emily Watson', 'Sarah Chen'],
-      image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&h=400&fit=crop',
-      link: '#'
+      title: 'Dr. Sarah Chen Presents Keynote at Digital Humanities Conference',
+      date: 'February 28, 2024',
+      category: 'Conference',
+      excerpt: 'Our PI delivered a keynote address on "The Future of Computational Literary Analysis" at the annual DH conference.',
+      image: '/api/placeholder/400/250',
+      featured: false
     },
     {
-      type: 'collaboration',
-      title: 'New Partnership with Stanford NLP Group',
-      excerpt: 'We are excited to announce a new collaborative research project with Stanford\'s Natural Language Processing Group on multilingual sentiment analysis.',
-      date: 'June 15, 2024',
-      location: 'Stanford, CA',
-      attendees: ['Sarah Chen', 'Marcus Rodriguez'],
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop',
-      link: '#'
+      title: 'New Paper Published in Top-tier Journal',
+      date: 'February 15, 2024',
+      category: 'Publication',
+      excerpt: 'Our research on sentiment analysis in Victorian literature has been published in Digital Humanities Quarterly.',
+      image: '/api/placeholder/400/250',
+      featured: false
     },
     {
-      type: 'research',
-      title: 'Launch of New Text Analysis Platform',
-      excerpt: 'CatLab has launched a new open-source platform for large-scale text analysis, making our tools available to researchers worldwide.',
-      date: 'May 30, 2024',
-      location: 'Online',
-      attendees: ['David Thompson', 'Alex Kim'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-      link: '#'
+      title: 'Lab Welcomes Two New PhD Students',
+      date: 'January 30, 2024',
+      category: 'Team',
+      excerpt: 'We\'re excited to welcome Alex Thompson and Priya Patel to our research team as new PhD students.',
+      image: '/api/placeholder/400/250',
+      featured: false
     },
     {
-      type: 'workshop',
-      title: 'Summer Workshop on Computational Humanities',
-      excerpt: 'Join us for a two-week intensive workshop on computational methods in humanities research, open to graduate students and early-career researchers.',
-      date: 'August 5-16, 2024',
-      location: 'CatLab Headquarters',
-      attendees: ['All Team Members'],
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop',
-      link: '#'
+      title: 'Collaboration with International Research Consortium',
+      date: 'January 15, 2024',
+      category: 'Collaboration',
+      excerpt: 'Cat Lab joins a global consortium of researchers working on large-scale cultural data analysis.',
+      image: '/api/placeholder/400/250',
+      featured: false
     },
     {
-      type: 'publication',
-      title: 'New Research Paper in Nature Digital Humanities',
-      excerpt: 'Our latest research on cross-cultural text analysis has been published in Nature Digital Humanities, representing a major breakthrough in the field.',
-      date: 'May 20, 2024',
-      location: 'Nature Digital Humanities',
-      attendees: ['Priya Patel', 'Sarah Chen', 'Emily Watson'],
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop',
-      link: '#'
+      title: 'Open Source Tool Release: TextMiner Pro',
+      date: 'December 20, 2023',
+      category: 'Software',
+      excerpt: 'We\'ve released our latest open-source tool for computational text analysis, available to the research community.',
+      image: '/api/placeholder/400/250',
+      featured: false
     }
   ]
 
-  const getTypeIcon = (type: string) => {
-    switch (type) {
-      case 'conference':
-        return Presentation
-      case 'award':
-        return Award
-      case 'collaboration':
-        return Users
-      case 'research':
-        return Globe
-      case 'workshop':
-        return Users
-      case 'publication':
-        return Globe
-      default:
-        return Globe
+  const upcomingEvents = [
+    {
+      title: 'Digital Humanities Summer Workshop',
+      date: 'June 15-20, 2024',
+      location: 'University Campus',
+      description: 'A week-long workshop on computational methods in humanities research.'
+    },
+    {
+      title: 'Annual Lab Symposium',
+      date: 'May 10, 2024',
+      location: 'Conference Center',
+      description: 'Presenting our latest research findings and future directions.'
+    },
+    {
+      title: 'Guest Lecture Series',
+      date: 'April 25, 2024',
+      location: 'Lecture Hall A',
+      description: 'Dr. Emily Watson presents on "Advances in NLP for Literary Analysis".'
     }
-  }
-
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case 'conference':
-        return 'from-blue-500 to-blue-600'
-      case 'award':
-        return 'from-yellow-500 to-yellow-600'
-      case 'collaboration':
-        return 'from-green-500 to-green-600'
-      case 'research':
-        return 'from-purple-500 to-purple-600'
-      case 'workshop':
-        return 'from-orange-500 to-orange-600'
-      case 'publication':
-        return 'from-red-500 to-red-600'
-      default:
-        return 'from-gray-500 to-gray-600'
-    }
-  }
+  ]
 
   return (
-    <section id="news" className="section-padding bg-gray-50">
-      <div className="container-max">
-        {/* Section Header */}
-        <motion.div 
+    <section id="news" className="section-padding bg-white">
+      <div className="container-custom">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Latest <span className="gradient-text">News</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Lab <span className="gradient-text">News</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-            Stay updated with our latest research activities, conference presentations, 
-            collaborations, and achievements in computational humanities.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Stay updated with our latest research developments, team news, and upcoming events.
           </p>
         </motion.div>
 
-        {/* News Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {newsItems.map((item, index) => {
-            const IconComponent = getTypeIcon(item.type)
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="card group hover:scale-105 transition-transform duration-300 overflow-hidden"
-              >
-                {/* Image */}
-                <div className="relative h-48 mb-6 overflow-hidden rounded-lg">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <div className={`px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r ${getTypeColor(item.type)}`}>
-                      {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
-                    </div>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Featured News */}
+          <div className="lg:col-span-2">
+            <div className="grid md:grid-cols-2 gap-6">
+              {newsItems.slice(0, 4).map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`bg-gray-50 rounded-xl overflow-hidden card-hover ${
+                    item.featured ? 'md:col-span-2' : ''
+                  }`}
+                >
+                  <div className="h-48 bg-gradient-to-br from-primary-400 to-secondary-400 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">
+                      {item.title.split(' ').slice(0, 2).join(' ')}
+                    </span>
                   </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
-                    {item.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    {item.excerpt}
-                  </p>
-
-                  {/* Meta Information */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <Calendar className="w-4 h-4" />
-                      <span>{item.date}</span>
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs font-medium text-primary-600 bg-primary-100 px-2 py-1 rounded-full">
+                        {item.category}
+                      </span>
+                      <span className="text-sm text-gray-500">{item.date}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <MapPin className="w-4 h-4" />
-                      <span>{item.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm text-gray-500">
-                      <Users className="w-4 h-4" />
-                      <span>{Array.isArray(item.attendees) ? item.attendees.join(', ') : item.attendees}</span>
-                    </div>
+                    <h3 className="text-lg font-bold mb-3 text-gray-800">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                      {item.excerpt}
+                    </p>
+                    <button className="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center space-x-1">
+                      <span>Read More</span>
+                      <ExternalLink size={14} />
+                    </button>
                   </div>
-
-                  {/* Read More Link */}
-                  <a
-                    href={item.link}
-                    className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium group/link"
-                  >
-                    Read More
-                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
-                  </a>
-                </div>
-              </motion.div>
-            )
-          })}
-        </div>
-
-        {/* Newsletter Signup */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
-        >
-          <div className="text-center max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
-            <p className="text-gray-600 mb-6">
-              Subscribe to our newsletter to receive updates about our latest research, 
-              publications, and upcoming events.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-              />
-              <button className="btn-primary whitespace-nowrap">
-                Subscribe
-              </button>
+                </motion.div>
+              ))}
             </div>
           </div>
+
+          {/* Sidebar */}
+          <div className="space-y-8">
+            {/* Upcoming Events */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl p-6"
+            >
+              <h3 className="text-xl font-bold mb-6 text-gray-800">Upcoming Events</h3>
+              <div className="space-y-4">
+                {upcomingEvents.map((event, index) => (
+                  <div key={index} className="border-l-4 border-primary-500 pl-4">
+                    <h4 className="font-semibold text-gray-800 mb-2">{event.title}</h4>
+                    <div className="flex items-center space-x-2 text-sm text-gray-600 mb-1">
+                      <Calendar size={14} />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-gray-600 mb-2">
+                      <MapPin size={14} />
+                      <span>{event.location}</span>
+                    </div>
+                    <p className="text-sm text-gray-600">{event.description}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Quick Stats */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl p-6 shadow-lg"
+            >
+              <h3 className="text-xl font-bold mb-6 text-gray-800">Recent Highlights</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
+                    <Award className="w-5 h-5 text-primary-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-800">$2M Grant Awarded</div>
+                    <div className="text-sm text-gray-600">NSF Digital Humanities</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center">
+                    <Users className="w-5 h-5 text-secondary-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-800">2 New Team Members</div>
+                    <div className="text-sm text-gray-600">PhD Students Joined</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center">
+                    <ExternalLink className="w-5 h-5 text-accent-600" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-800">Open Source Release</div>
+                    <div className="text-sm text-gray-600">TextMiner Pro Tool</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* View All News CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <button className="btn-secondary">
+            View All News & Events
+          </button>
         </motion.div>
       </div>
     </section>

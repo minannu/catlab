@@ -1,224 +1,189 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { FileText, ExternalLink, Calendar, Users, Filter } from 'lucide-react'
-import { useState } from 'react'
+import { ExternalLink, Download, Calendar, Users } from 'lucide-react'
 
 const PublicationsSection = () => {
-  const [activeFilter, setActiveFilter] = useState('all')
-
   const publications = [
     {
-      title: 'Computational Analysis of Literary Style Evolution in 19th Century Novels',
-      authors: ['Sarah Chen', 'Marcus Rodriguez', 'Emily Watson'],
+      title: 'Computational Analysis of Sentiment Evolution in Victorian Literature',
+      authors: 'Chen, S., Rodriguez, M., Watson, E.',
       journal: 'Digital Humanities Quarterly',
-      year: 2024,
+      year: '2024',
       doi: '10.1234/dhq.2024.001',
-      abstract: 'This study applies advanced NLP techniques to analyze stylistic changes in 19th century literature, revealing patterns in narrative evolution and authorial voice.',
-      category: 'computational-literature',
+      abstract: 'This study presents a novel computational approach to analyzing sentiment patterns across Victorian literary works, revealing previously unrecognized emotional trajectories in 19th-century fiction.',
       citations: 45,
-      pdf: '#'
+      category: 'Literature Analysis'
     },
     {
-      title: 'Real-time Sentiment Analysis of Social Media Discourse During Political Events',
-      authors: ['Marcus Rodriguez', 'Alex Kim', 'Priya Patel'],
+      title: 'Real-time Social Media Sentiment Analysis During Global Events',
+      authors: 'Rodriguez, M., Kim, J., Thompson, A.',
       journal: 'Computational Social Science',
-      year: 2024,
+      year: '2024',
       doi: '10.1234/css.2024.002',
-      abstract: 'A novel approach to real-time sentiment tracking across multiple social media platforms, providing insights into public opinion dynamics.',
-      category: 'sentiment-analysis',
+      abstract: 'We develop a real-time sentiment analysis framework for tracking public opinion shifts during major global events, demonstrating the dynamic nature of collective emotional responses.',
       citations: 32,
-      pdf: '#'
+      category: 'Social Media Analysis'
     },
     {
-      title: 'Multilingual Text Mining for Cross-Cultural Communication Patterns',
-      authors: ['Priya Patel', 'Sarah Chen', 'David Thompson'],
-      journal: 'Language Resources and Evaluation',
-      year: 2023,
-      doi: '10.1234/lre.2023.003',
-      abstract: 'Development of multilingual corpus analysis tools for understanding communication patterns across different cultural contexts.',
-      category: 'text-mining',
+      title: 'Neural Network Approaches to Literary Genre Classification',
+      authors: 'Watson, E., Chen, S., Patel, P.',
+      journal: 'Computational Linguistics',
+      year: '2023',
+      doi: '10.1234/cl.2023.003',
+      abstract: 'A deep learning model for automatic genre classification of literary texts, achieving state-of-the-art performance on a diverse corpus of classical and contemporary literature.',
+      citations: 67,
+      category: 'NLP'
+    },
+    {
+      title: 'Digital Mapping of Cultural Themes Across Historical Periods',
+      authors: 'Kim, J., Chen, S., Rodriguez, M.',
+      journal: 'Cultural Analytics',
+      year: '2023',
+      doi: '10.1234/ca.2023.004',
+      abstract: 'An interactive digital mapping system for visualizing cultural themes and motifs across different historical periods and geographical regions.',
       citations: 28,
-      pdf: '#'
+      category: 'Digital Humanities'
     },
     {
-      title: 'Interactive Visualization of Large-Scale Text Corpora',
-      authors: ['Alex Kim', 'Emily Watson', 'David Thompson'],
-      journal: 'IEEE Transactions on Visualization and Computer Graphics',
-      year: 2023,
-      doi: '10.1234/tvcg.2023.004',
-      abstract: 'A new framework for creating interactive visualizations of large text datasets, enabling researchers to explore patterns intuitively.',
-      category: 'visualization',
-      citations: 19,
-      pdf: '#'
+      title: 'Community Detection in Social Media Networks',
+      authors: 'Patel, P., Watson, E., Thompson, A.',
+      journal: 'Social Network Analysis and Mining',
+      year: '2023',
+      doi: '10.1234/snam.2023.005',
+      abstract: 'Advanced algorithms for detecting and analyzing community structures in large-scale social media networks, with applications to digital discourse analysis.',
+      citations: 41,
+      category: 'Network Analysis'
     },
     {
-      title: 'Digital Humanities Approaches to Historical Text Preservation',
-      authors: ['Emily Watson', 'Sarah Chen'],
-      journal: 'Journal of Cultural Analytics',
-      year: 2023,
-      doi: '10.1234/jca.2023.005',
-      abstract: 'Computational methods for preserving and analyzing historical texts, with applications to cultural heritage preservation.',
-      category: 'digital-humanities',
-      citations: 23,
-      pdf: '#'
-    },
-    {
-      title: 'Scalable Architecture for Processing Massive Text Datasets',
-      authors: ['David Thompson', 'Marcus Rodriguez', 'Alex Kim'],
-      journal: 'Big Data Analytics',
-      year: 2023,
-      doi: '10.1234/bda.2023.006',
-      abstract: 'Design and implementation of a distributed computing framework for processing and analyzing large-scale text corpora.',
-      category: 'infrastructure',
-      citations: 15,
-      pdf: '#'
+      title: 'Machine Learning for Historical Text Mining',
+      authors: 'Thompson, A., Kim, J., Chen, S.',
+      journal: 'Journal of Digital Humanities',
+      year: '2023',
+      doi: '10.1234/jdh.2023.006',
+      abstract: 'A comprehensive framework for applying machine learning techniques to historical text analysis, enabling new insights into cultural and linguistic evolution.',
+      citations: 53,
+      category: 'Digital Humanities'
     }
   ]
 
-  const categories = [
-    { id: 'all', name: 'All Publications' },
-    { id: 'computational-literature', name: 'Computational Literature' },
-    { id: 'sentiment-analysis', name: 'Sentiment Analysis' },
-    { id: 'text-mining', name: 'Text Mining' },
-    { id: 'visualization', name: 'Visualization' },
-    { id: 'digital-humanities', name: 'Digital Humanities' },
-    { id: 'infrastructure', name: 'Infrastructure' }
-  ]
-
-  const filteredPublications = activeFilter === 'all' 
-    ? publications 
-    : publications.filter(pub => pub.category === activeFilter)
+  const categories = ['All', 'Literature Analysis', 'Social Media Analysis', 'NLP', 'Digital Humanities', 'Network Analysis']
 
   return (
-    <section id="publications" className="section-padding bg-white">
-      <div className="container-max">
-        {/* Section Header */}
-        <motion.div 
+    <section id="publications" className="section-padding bg-gray-50">
+      <div className="container-custom">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="gradient-text">Publications</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Recent <span className="gradient-text">Publications</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-            Recent research contributions advancing the field of computational humanities 
-            and text analysis across various domains.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our latest research contributions to the fields of computational linguistics, 
+            digital humanities, and social media analysis.
           </p>
         </motion.div>
 
-        {/* Filter Buttons */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveFilter(category.id)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
-                activeFilter === category.id
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              {category.name}
-            </button>
-          ))}
-        </motion.div>
-
-        {/* Publications Grid */}
-        <div className="space-y-6">
-          {filteredPublications.map((publication, index) => (
+        <div className="grid lg:grid-cols-3 gap-8">
+          {publications.map((pub, index) => (
             <motion.div
-              key={publication.doi}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-xl p-6 shadow-lg card-hover"
             >
-              <div className="flex flex-col lg:flex-row gap-6">
-                {/* Publication Icon */}
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-primary-100 rounded-lg flex items-center justify-center">
-                    <FileText className="w-8 h-8 text-primary-600" />
+              <div className="mb-4">
+                <span className="inline-block bg-primary-100 text-primary-800 text-xs font-medium px-3 py-1 rounded-full">
+                  {pub.category}
+                </span>
+              </div>
+              
+              <h3 className="text-lg font-bold mb-3 text-gray-800 leading-tight">
+                {pub.title}
+              </h3>
+              
+              <p className="text-sm text-gray-600 mb-3">
+                <strong>Authors:</strong> {pub.authors}
+              </p>
+              
+              <p className="text-sm text-gray-600 mb-3">
+                <strong>Journal:</strong> {pub.journal}
+              </p>
+              
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-4 text-sm text-gray-500">
+                  <div className="flex items-center space-x-1">
+                    <Calendar size={14} />
+                    <span>{pub.year}</span>
+                  </div>
+                  <div className="flex items-center space-x-1">
+                    <Users size={14} />
+                    <span>{pub.citations} citations</span>
                   </div>
                 </div>
-
-                {/* Publication Content */}
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-3 text-gray-900 hover:text-primary-600 transition-colors duration-200">
-                    {publication.title}
-                  </h3>
-                  
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 mb-3">
-                    <div className="flex items-center gap-1">
-                      <Users className="w-4 h-4" />
-                      <span>{publication.authors.join(', ')}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      <span>{publication.year}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="font-medium">{publication.journal}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-gray-700 mb-4 leading-relaxed">
-                    {publication.abstract}
-                  </p>
-
-                  <div className="flex flex-wrap items-center gap-4">
-                    <span className="text-sm text-gray-500">
-                      DOI: {publication.doi}
-                    </span>
-                    <span className="text-sm text-gray-500">
-                      Citations: {publication.citations}
-                    </span>
-                    <div className="flex gap-2">
-                      <a
-                        href={publication.pdf}
-                        className="btn-secondary text-sm py-2 px-4 flex items-center gap-2"
-                      >
-                        <FileText className="w-4 h-4" />
-                        PDF
-                      </a>
-                      <a
-                        href={`https://doi.org/${publication.doi}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-primary text-sm py-2 px-4 flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        View Paper
-                      </a>
-                    </div>
-                  </div>
+              </div>
+              
+              <p className="text-sm text-gray-600 mb-4 leading-relaxed">
+                {pub.abstract}
+              </p>
+              
+              <div className="flex items-center justify-between">
+                <span className="text-xs text-gray-500">
+                  DOI: {pub.doi}
+                </span>
+                <div className="flex space-x-2">
+                  <button className="p-2 text-gray-400 hover:text-primary-600 transition-colors duration-200">
+                    <ExternalLink size={16} />
+                  </button>
+                  <button className="p-2 text-gray-400 hover:text-primary-600 transition-colors duration-200">
+                    <Download size={16} />
+                  </button>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* View All Publications CTA */}
-        <motion.div 
+        {/* Publication Stats */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="mt-16 grid md:grid-cols-4 gap-8"
         >
-          <p className="text-lg text-gray-600 mb-6">
-            View our complete publication list and research outputs
-          </p>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text mb-2">50+</div>
+            <div className="text-gray-600">Peer-reviewed Papers</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text mb-2">1,200+</div>
+            <div className="text-gray-600">Total Citations</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text mb-2">15+</div>
+            <div className="text-gray-600">Journal Publications</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold gradient-text mb-2">25+</div>
+            <div className="text-gray-600">Conference Papers</div>
+          </div>
+        </motion.div>
+
+        {/* View All Publications CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
           <button className="btn-primary">
             View All Publications
           </button>

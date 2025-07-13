@@ -5,13 +5,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'CatLab - Computational Literature & Social Media Research',
-  description: 'CatLab is a research laboratory focused on computational literature text analysis, social media sentiment analysis, and digital humanities research.',
-  keywords: 'computational literature, sentiment analysis, social media research, digital humanities, text analysis',
-  authors: [{ name: 'CatLab Research Team' }],
+  title: 'Cat Lab - Literature & Social Media Analysis Research',
+  description: 'Cutting-edge research in literature text analysis and social media analysis. Exploring the intersection of computational linguistics and digital humanities.',
+  keywords: 'literature analysis, social media analysis, computational linguistics, digital humanities, text mining, NLP',
+  authors: [{ name: 'Cat Lab Research Team' }],
   openGraph: {
-    title: 'CatLab - Computational Literature & Social Media Research',
-    description: 'Advancing research in computational literature and social media analysis',
+    title: 'Cat Lab - Literature & Social Media Analysis Research',
+    description: 'Cutting-edge research in literature text analysis and social media analysis.',
     type: 'website',
   },
 }

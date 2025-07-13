@@ -1,132 +1,146 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BookOpen, MessageSquare, TrendingUp, Brain, Database, Globe } from 'lucide-react'
+import { BookOpen, TrendingUp, Brain, Globe, Database, BarChart3 } from 'lucide-react'
 
 const ResearchAreas = () => {
   const researchAreas = [
     {
+      title: 'Literature Text Analysis',
+      description: 'Computational analysis of literary works, including sentiment analysis, theme extraction, and stylistic pattern recognition across different genres and time periods.',
       icon: BookOpen,
-      title: 'Computational Literature Analysis',
-      description: 'Advanced text mining and natural language processing techniques applied to literary works, enabling large-scale analysis of themes, styles, and narrative structures.',
-      features: ['Text Mining', 'NLP', 'Stylometric Analysis', 'Topic Modeling'],
-      color: 'from-blue-500 to-blue-600'
+      color: 'primary',
+      features: ['Sentiment Analysis', 'Theme Extraction', 'Stylistic Analysis', 'Genre Classification']
     },
     {
-      icon: MessageSquare,
-      title: 'Social Media Sentiment Analysis',
-      description: 'Real-time analysis of public sentiment across social media platforms, understanding how digital communication shapes public opinion and discourse.',
-      features: ['Sentiment Analysis', 'Real-time Processing', 'Opinion Mining', 'Trend Analysis'],
-      color: 'from-green-500 to-green-600'
-    },
-    {
-      icon: Brain,
-      title: 'Digital Humanities Research',
-      description: 'Bridging traditional humanities with computational methods to explore cultural phenomena, historical texts, and human expression in the digital age.',
-      features: ['Cultural Analytics', 'Historical Analysis', 'Human-Computer Interaction', 'Digital Archives'],
-      color: 'from-purple-500 to-purple-600'
-    },
-    {
+      title: 'Social Media Analysis',
+      description: 'Real-time analysis of digital discourse, including trend prediction, influence mapping, and community detection in social networks.',
       icon: TrendingUp,
-      title: 'Text Analytics & Visualization',
-      description: 'Creating intuitive visualizations and interactive tools to explore complex textual data and reveal patterns in human communication.',
-      features: ['Data Visualization', 'Interactive Tools', 'Pattern Recognition', 'Storytelling'],
-      color: 'from-orange-500 to-orange-600'
+      color: 'secondary',
+      features: ['Trend Prediction', 'Influence Mapping', 'Community Detection', 'Viral Content Analysis']
     },
     {
-      icon: Database,
-      title: 'Large-Scale Text Processing',
-      description: 'Developing scalable algorithms and systems for processing massive text corpora, enabling research on previously inaccessible data scales.',
-      features: ['Big Data Processing', 'Distributed Computing', 'Corpus Analysis', 'Scalable Algorithms'],
-      color: 'from-red-500 to-red-600'
+      title: 'Natural Language Processing',
+      description: 'Advanced NLP techniques for understanding human language patterns, including machine learning models for text classification and generation.',
+      icon: Brain,
+      color: 'accent',
+      features: ['Text Classification', 'Language Generation', 'Named Entity Recognition', 'Semantic Analysis']
     },
     {
+      title: 'Digital Humanities',
+      description: 'Bridging traditional humanities research with computational methods to explore cultural artifacts and historical texts.',
       icon: Globe,
-      title: 'Cross-Cultural Text Analysis',
-      description: 'Comparative analysis of texts across different cultures, languages, and time periods to understand universal patterns in human expression.',
-      features: ['Multilingual Analysis', 'Cross-Cultural Studies', 'Comparative Literature', 'Cultural Patterns'],
-      color: 'from-indigo-500 to-indigo-600'
+      color: 'primary',
+      features: ['Cultural Analytics', 'Historical Text Mining', 'Digital Archives', 'Cultural Pattern Recognition']
+    },
+    {
+      title: 'Big Data Analytics',
+      description: 'Processing and analyzing large-scale textual datasets to uncover patterns and insights in human communication.',
+      icon: Database,
+      color: 'secondary',
+      features: ['Large-scale Processing', 'Pattern Recognition', 'Data Visualization', 'Predictive Modeling']
+    },
+    {
+      title: 'Computational Linguistics',
+      description: 'Developing algorithms and models to understand linguistic structures and language evolution across different contexts.',
+      icon: BarChart3,
+      color: 'accent',
+      features: ['Linguistic Modeling', 'Language Evolution', 'Syntax Analysis', 'Morphological Analysis']
     }
   ]
 
   return (
     <section id="research" className="section-padding bg-gray-50">
-      <div className="container-max">
-        {/* Section Header */}
-        <motion.div 
+      <div className="container-custom">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span className="gradient-text">Research Areas</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+            Research <span className="gradient-text">Areas</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance">
-            We explore the intersection of computational methods and human expression, 
-            advancing our understanding of literature, communication, and digital culture.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our research spans multiple domains at the intersection of computational linguistics, 
+            digital humanities, and social media analysis.
           </p>
         </motion.div>
 
-        {/* Research Areas Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {researchAreas.map((area, index) => (
             <motion.div
-              key={area.title}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="card group hover:scale-105 transition-transform duration-300"
+              className="bg-white rounded-xl p-6 shadow-lg card-hover"
             >
-              {/* Icon */}
-              <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${area.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                <area.icon className="w-6 h-6 text-white" />
+              <div className={`w-16 h-16 bg-${area.color}-100 rounded-xl flex items-center justify-center mb-6`}>
+                <area.icon className={`w-8 h-8 text-${area.color}-600`} />
               </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-primary-600 transition-colors duration-200">
+              
+              <h3 className="text-xl font-bold mb-4 text-gray-800">
                 {area.title}
               </h3>
-
-              {/* Description */}
+              
               <p className="text-gray-600 mb-6 leading-relaxed">
                 {area.description}
               </p>
-
-              {/* Features */}
+              
               <div className="space-y-2">
                 <h4 className="font-semibold text-gray-800 mb-3">Key Focus Areas:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {area.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full font-medium"
-                    >
-                      {feature}
-                    </span>
+                <ul className="space-y-2">
+                  {area.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center space-x-2">
+                      <div className={`w-2 h-2 bg-${area.color}-500 rounded-full`}></div>
+                      <span className="text-sm text-gray-600">{feature}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Call to Action */}
-        <motion.div 
+        {/* Current Projects Highlight */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          className="mt-16 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-2xl p-8 text-white"
         >
-          <p className="text-lg text-gray-600 mb-6">
-            Interested in collaborating or learning more about our research?
-          </p>
-          <button className="btn-primary">
-            Get in Touch
-          </button>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-4">Current Research Projects</h3>
+            <p className="text-lg opacity-90">
+              We're currently working on several groundbreaking projects that push the boundaries 
+              of computational analysis in humanities research.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h4 className="font-semibold mb-2">Digital Literary Mapping</h4>
+              <p className="text-sm opacity-80">
+                Creating interactive maps of literary themes and motifs across time and geography.
+              </p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h4 className="font-semibold mb-2">Social Media Sentiment Evolution</h4>
+              <p className="text-sm opacity-80">
+                Tracking how public sentiment changes in response to major events and news cycles.
+              </p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <h4 className="font-semibold mb-2">AI-Powered Text Analysis</h4>
+              <p className="text-sm opacity-80">
+                Developing next-generation AI models for understanding context and nuance in text.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
