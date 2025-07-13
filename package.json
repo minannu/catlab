@@ -5,9 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build",
+    "serve": "npx serve@latest out"
   },
   "dependencies": {
     "next": "14.0.0",
