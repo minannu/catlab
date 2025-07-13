@@ -13,7 +13,7 @@ const ResearchAreas = () => {
       features: ['Pattern Recognition', 'Predictive Modeling', 'Deep Learning', 'Neural Networks']
     },
     {
-      title: 'Data Mining & Analytics',
+      title: 'Data  Mining & Analytics',
       description: 'Comprehensive data mining techniques for extracting meaningful patterns and insights from large-scale datasets including literature and social media.',
       icon: Database,
       color: 'secondary',
