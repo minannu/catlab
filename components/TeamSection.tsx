@@ -37,7 +37,7 @@ const TeamSection = () => {
       }
     },
     {
-      name: 'Tanbeer Jubaer',
+      name: 'Tanbeer Jubaer ',
       role: 'Research Associate',
       expertise: 'Computer Science, Data Analysis, Research Methodology',
       bio: 'Focused on data analysis and research methodology, contributing to the development of computational tools for literature and social media analysis.',
